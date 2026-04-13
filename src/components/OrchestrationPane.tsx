@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import type { SystemStatuses, LogEntry } from '../data/types';
-import { ConnectedSystemsGraph } from './ConnectedSystemsGraph';
+import { SystemLinks } from './SystemLinks';
 import { ReasoningLog } from './ReasoningLog';
 
 interface Props {
@@ -77,7 +77,7 @@ export function OrchestrationPane({ systemStatuses, logEntries, isRunning }: Pro
               </button>
             </div>
           </div>
-          <ConnectedSystemsGraph statuses={systemStatuses} isRunning={isRunning} />
+          <SystemLinks statuses={systemStatuses} isRunning={isRunning} isExpanded={isSystemsExpanded} />
         </div>
         <div className="flex-1 min-h-0 flex flex-col">
           <div className="px-3 py-2 border-b border-snow-200 flex items-center justify-between">
