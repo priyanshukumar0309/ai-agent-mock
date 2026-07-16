@@ -51,7 +51,7 @@ export function DemoControls({ isRunning, isComplete, onStart, onReset }: Props)
   };
 
   return (
-    <div className="px-4 py-3 border-t border-snow-200 bg-snow-50">
+    <div className="px-3 sm:px-4 py-2.5 sm:py-3 border-t border-snow-200 bg-snow-50 max-h-[42vh] sm:max-h-none overflow-y-auto">
       <AnimatePresence mode="wait">
         {isRunning && !isComplete ? (
           <motion.div
@@ -82,7 +82,7 @@ export function DemoControls({ isRunning, isComplete, onStart, onReset }: Props)
               <motion.div
                 initial={{ opacity: 0, y: -4 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-center gap-2 mb-3"
+                className="flex items-center gap-2 mb-2 sm:mb-3"
               >
                 <div className="flex-1 flex items-center gap-2 px-3 py-2 bg-emerald-50 border border-emerald-200 rounded-lg">
                   <div className="w-2 h-2 rounded-full bg-emerald-500" />
@@ -90,7 +90,7 @@ export function DemoControls({ isRunning, isComplete, onStart, onReset }: Props)
                 </div>
                 <button
                   onClick={handleReset}
-                  className="flex items-center gap-1.5 px-4 py-2 bg-white hover:bg-snow-100 border border-snow-300 text-snow-600 text-xs font-medium rounded-lg transition-all duration-200"
+                  className="flex items-center gap-1.5 px-3 sm:px-4 py-2 bg-white hover:bg-snow-100 border border-snow-300 text-snow-600 text-xs font-medium rounded-lg transition-all duration-200"
                 >
                   <RotateCcw size={12} />
                   Reset
@@ -100,7 +100,7 @@ export function DemoControls({ isRunning, isComplete, onStart, onReset }: Props)
             <p className="text-[10px] text-snow-400 uppercase tracking-wider px-1 mb-2 font-medium">
               {isComplete ? 'Select the next scenario' : 'Select a scenario'}
             </p>
-            <div className="grid grid-cols-2 gap-1.5 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-2 lg:grid-cols-4">
               {scenarios.map((scenario, i) => {
                 const Icon = scenarioIcons[i];
                 const isHighlighted = i === highlightedIndex;
@@ -108,7 +108,7 @@ export function DemoControls({ isRunning, isComplete, onStart, onReset }: Props)
                   <motion.button
                     key={scenario.id}
                     onClick={() => handleStartScenario(scenario)}
-                    className={`flex flex-col items-start gap-1.5 px-3 py-2.5 rounded-lg transition-all duration-200 group text-left relative ${
+                    className={`flex flex-col items-start gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-2 sm:py-2.5 rounded-lg transition-all duration-200 group text-left relative touch-manipulation ${
                       isHighlighted
                         ? 'bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-400 shadow-lg shadow-amber-200/50'
                         : 'bg-white hover:bg-blue-50 border border-snow-200 hover:border-volvo-blue/30'
@@ -167,7 +167,7 @@ export function DemoControls({ isRunning, isComplete, onStart, onReset }: Props)
                         }`}
                       />
                     </div>
-                    <div>
+                    <div className="min-w-0 w-full">
                       <p
                         className={`text-[11px] font-medium transition-colors leading-tight ${
                           isHighlighted
@@ -177,7 +177,7 @@ export function DemoControls({ isRunning, isComplete, onStart, onReset }: Props)
                       >
                         {scenario.buttonLabel}
                       </p>
-                      <p className="text-[9px] text-snow-400 leading-tight mt-0.5">
+                      <p className="text-[9px] text-snow-400 leading-tight mt-0.5 line-clamp-2 sm:line-clamp-none">
                         {scenario.description}
                       </p>
                     </div>

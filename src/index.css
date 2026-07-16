@@ -15,8 +15,14 @@
     overflow: hidden;
   }
 
+  #root {
+    height: 100vh;
+    height: 100dvh;
+  }
+
   ::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
   }
 
   ::-webkit-scrollbar-track {

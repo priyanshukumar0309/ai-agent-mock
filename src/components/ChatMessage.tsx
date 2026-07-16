@@ -19,10 +19,10 @@ export function ChatMessage({ message, onConfirm, confirmationSent }: Props) {
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-      className={`flex items-start gap-3 px-6 py-2 ${isUser ? 'flex-row-reverse' : ''}`}
+      className={`flex items-start gap-2 sm:gap-3 px-3 sm:px-6 py-2 ${isUser ? 'flex-row-reverse' : ''}`}
     >
       <div
-        className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
+        className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
           isUser
             ? 'bg-volvo-blue text-white'
             : 'bg-volvo-navy/10 text-volvo-navy'
@@ -31,13 +31,13 @@ export function ChatMessage({ message, onConfirm, confirmationSent }: Props) {
         {isUser ? <User size={14} /> : <Bot size={14} />}
       </div>
       <div
-        className={`max-w-[85%] ${
+        className={`max-w-[90%] sm:max-w-[85%] min-w-0 ${
           isUser
             ? 'bg-volvo-blue text-white rounded-2xl rounded-tr-sm'
             : 'bg-snow-100 border border-snow-200 text-snow-800 rounded-2xl rounded-tl-sm'
-        } px-5 py-3.5`}
+        } px-3.5 sm:px-5 py-3 sm:py-3.5`}
       >
-        <p className={`text-sm leading-relaxed ${isUser ? 'text-white' : 'text-snow-700'}`}>
+        <p className={`text-sm leading-relaxed break-words ${isUser ? 'text-white' : 'text-snow-700'}`}>
           {message.content}
         </p>
 
@@ -72,7 +72,7 @@ export function ChatMessage({ message, onConfirm, confirmationSent }: Props) {
               <div className="mt-2 rounded-lg border border-snow-200 overflow-hidden bg-white">
                 <iframe
                   src={message.attachment.url}
-                  className="w-full h-96"
+                  className="w-full h-56 sm:h-96"
                   title={message.attachment.name}
                 />
               </div>

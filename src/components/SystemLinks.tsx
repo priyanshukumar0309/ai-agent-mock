@@ -130,7 +130,7 @@ export function SystemLinks({ statuses, isRunning, isExpanded }: Props) {
   const anyActive = isRunning || Object.values(statuses).some((s) => s !== 'idle');
 
   return (
-    <div className="px-3 py-2.5">
+    <div className="px-2 sm:px-3 py-2.5 overflow-x-auto">
       {anyActive && (
         <div className="flex items-center justify-end gap-1.5 mb-2.5 px-0.5">
           <motion.div
@@ -144,16 +144,16 @@ export function SystemLinks({ statuses, isRunning, isExpanded }: Props) {
         </div>
       )}
 
-      <div className="mb-2.5 flex justify-center gap-2">
+      <div className="mb-2.5 flex justify-center gap-2 min-w-[300px]">
         <ClaudeNode status={aiStatus} isExpanded={isExpanded} />
         <GeminiNode status={aiStatus} isExpanded={isExpanded} />
       </div>
 
-      <div className="flex justify-center mb-2">
+      <div className="flex justify-center mb-2 min-w-[300px]">
         <div className={`w-[2px] ${isExpanded ? 'h-6' : 'h-4'} rounded-full transition-all duration-500 ${connectorColor(aiStatus !== 'idle' ? aiStatus : workatoStatus)}`} />
       </div>
 
-      <div className="flex items-stretch justify-center gap-0">
+      <div className="flex items-stretch justify-center gap-0 min-w-[300px]">
         <div className="flex flex-col gap-1.5 items-end">
           {leftSystems.map((sys) => (
             <div key={sys.key} className="flex items-center">

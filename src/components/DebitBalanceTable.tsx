@@ -10,11 +10,11 @@ export function DebitBalanceTable() {
       className="mt-3 overflow-hidden"
     >
       <div className="bg-white border border-snow-200 rounded-lg overflow-hidden shadow-sm">
-        <div className="px-4 py-2.5 border-b border-snow-200 bg-snow-50 flex items-center justify-between">
-          <span className="text-[11px] font-semibold text-volvo-navy tracking-wide uppercase">
+        <div className="px-3 sm:px-4 py-2.5 border-b border-snow-200 bg-snow-50 flex items-center justify-between gap-2">
+          <span className="text-[10px] sm:text-[11px] font-semibold text-volvo-navy tracking-wide uppercase truncate">
             SAP FBL1N -- Vendor Open Items
           </span>
-          <span className="text-[10px] text-snow-500 font-mono">SEPV/805</span>
+          <span className="text-[10px] text-snow-500 font-mono shrink-0">SEPV/805</span>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-xs">

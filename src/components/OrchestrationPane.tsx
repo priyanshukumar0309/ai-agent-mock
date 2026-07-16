@@ -38,8 +38,8 @@ export function OrchestrationPane({ systemStatuses, logEntries, isRunning }: Pro
   };
 
   return (
-    <div className="flex flex-col h-full bg-snow-50 border-l border-snow-200">
-      <div className="px-4 py-4 border-b border-snow-200">
+    <div className="flex flex-col h-full bg-snow-50 md:border-l border-snow-200">
+      <div className="px-4 py-3 sm:py-4 border-b border-snow-200">
         <h2 className="text-xs font-semibold text-snow-800 tracking-wide">
           Orchestration Panel
         </h2>

@@ -26,28 +26,28 @@ export function ChatPane({ messages, isThinking, onConfirm, confirmationSent }: 
 
   return (
     <div className="flex flex-col h-full bg-white">
-      <div className="px-6 py-3.5 border-b border-snow-200 flex items-center gap-3 bg-volvo-navy">
-        <svg width="28" height="28" viewBox="0 0 32 32" className="flex-shrink-0">
+      <div className="px-3 sm:px-6 py-3 border-b border-snow-200 flex items-center gap-2 sm:gap-3 bg-volvo-navy">
+        <svg width="24" height="24" viewBox="0 0 32 32" className="flex-shrink-0 sm:w-7 sm:h-7">
           <circle cx="16" cy="16" r="14" fill="none" stroke="white" strokeWidth="1.5" />
           <line x1="6" y1="16" x2="26" y2="16" stroke="white" strokeWidth="1.5" />
           <line x1="16" y1="6" x2="26" y2="16" stroke="white" strokeWidth="1.5" />
           <line x1="16" y1="26" x2="26" y2="16" stroke="white" strokeWidth="1.5" />
         </svg>
-        <div className="h-5 w-px bg-white/20" />
-        <div className="flex items-center gap-2">
-          <span className="text-sm font-semibold text-white tracking-wide">Volvo Cars</span>
-          <span className="text-white/40">/</span>
-          <span className="text-sm font-medium text-white/90">Volvo Finance Assistant</span>
+        <div className="h-5 w-px bg-white/20 hidden sm:block" />
+        <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+          <span className="text-xs sm:text-sm font-semibold text-white tracking-wide shrink-0">Volvo Cars</span>
+          <span className="text-white/40 hidden sm:inline">/</span>
+          <span className="text-xs sm:text-sm font-medium text-white/90 truncate">Finance Assistant</span>
         </div>
-        <div className="ml-auto flex items-center gap-2 px-3 py-1 bg-amber-500/20 border border-amber-500/30 rounded-md">
+        <div className="ml-auto flex items-center gap-2 px-2 sm:px-3 py-1 bg-amber-500/20 border border-amber-500/30 rounded-md shrink-0">
           <span className="text-[10px] text-amber-300 font-semibold tracking-wide">DEMO</span>
         </div>
       </div>
 
       <div ref={scrollRef} className="flex-1 overflow-y-auto py-4 space-y-1 bg-white">
         {messages.length === 0 && (
-          <div className="flex flex-col items-center justify-center h-full text-center px-8">
-            <div className="w-16 h-16 rounded-full bg-volvo-navy/5 flex items-center justify-center mb-4">
+          <div className="flex flex-col items-center justify-center h-full text-center px-5 sm:px-8">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-volvo-navy/5 flex items-center justify-center mb-4">
               <Bot size={28} className="text-volvo-navy/40" />
             </div>
             <p className="text-sm font-medium text-snow-700 mb-1">Volvo Finance Assistant</p>
